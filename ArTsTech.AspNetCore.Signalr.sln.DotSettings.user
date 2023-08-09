@@ -1,0 +1,11 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.core\1.1.0\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.Core.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr\1.1.0\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.common\1.1.0\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.Common.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=50043dfb_002D1a2d_002D4b7e_002Da469_002Dc691112f2da5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DoStuff" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1372DB55-B257-44A4-99EE-0C096CD20578::.NETFramework,Version=v4.6.2::ArTsTech.AspNetCore.Signalr.Streaming.Test.Class1.DoStuff&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
