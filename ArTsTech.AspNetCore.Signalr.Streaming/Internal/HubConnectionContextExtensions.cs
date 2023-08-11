@@ -28,4 +28,20 @@ public static class HubConnectionContextExtensions
 		return _getter(connection);
 	}
 	
+	public static bool TryRegisterRequestCancellationSource(
+		this HubConnectionContext connection,
+		string invocationId,
+		CancellationTokenSource cancellationTokenSource)
+	{
+		var registry = _getter(connection);
+		return registry.TryAdd(invocationId, cancellationTokenSource);
+	}
+	
+	public static bool TryUnregisterRequestCancellationSource(
+		this HubConnectionContext connection,
+		string invocationId)
+	{
+		var registry = _getter(connection);
+		return registry.TryRemove(invocationId, out _);
+	}
 }

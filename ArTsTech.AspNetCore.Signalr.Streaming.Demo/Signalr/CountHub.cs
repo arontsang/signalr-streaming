@@ -18,7 +18,6 @@ public class CountHub : Hub
 				await Task.Delay(100, cancellationToken);
 				yield return i;
 			}
-			throw new Exception();
 		}
 
 		return AsyncEnumerable.Create(Impl);
