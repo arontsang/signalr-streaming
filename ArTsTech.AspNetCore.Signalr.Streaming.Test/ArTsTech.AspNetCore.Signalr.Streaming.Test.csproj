@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ArTsTech.AspNetCore.Signalr.Streaming\ArTsTech.AspNetCore.Signalr.Streaming.csproj" />
+      <ProjectReference Include="..\ArTsTech.AspNetCore.Signalr.Streaming.ServerFramework\ArTsTech.AspNetCore.Signalr.Streaming.ServerFramework.csproj" />
     </ItemGroup>
 
 </Project>

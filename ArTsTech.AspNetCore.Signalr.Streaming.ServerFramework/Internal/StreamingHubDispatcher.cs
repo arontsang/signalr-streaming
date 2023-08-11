@@ -26,7 +26,7 @@ public partial class StreamingHubDispatcher<THub> : DefaultHubDispatcher<THub> w
 
 	public StreamingHubDispatcher(
 		IServiceScopeFactory serviceScopeFactory,
-		IHubContext<THub> hubContext, 
+		IHubContext<THub> hubContext,
 		IOptions<HubOptions<THub>> hubOptions, 
 		IOptions<HubOptions> globalHubOptions, 
 		ILogger<StreamingHubDispatcher<THub>> logger) : base(serviceScopeFactory, hubContext, hubOptions, globalHubOptions, logger)

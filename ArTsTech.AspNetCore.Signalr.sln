@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArTsTech.AspNetCore.Signalr.Streaming", "ArTsTech.AspNetCore.Signalr.Streaming\ArTsTech.AspNetCore.Signalr.Streaming.csproj", "{D8EEF1A2-6335-469F-9BBC-DE7465EC842E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArTsTech.AspNetCore.Signalr.Streaming.ServerFramework", "ArTsTech.AspNetCore.Signalr.Streaming.ServerFramework\ArTsTech.AspNetCore.Signalr.Streaming.ServerFramework.csproj", "{D8EEF1A2-6335-469F-9BBC-DE7465EC842E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArTsTech.AspNetCore.Signalr.Streaming.Demo", "ArTsTech.AspNetCore.Signalr.Streaming.Demo\ArTsTech.AspNetCore.Signalr.Streaming.Demo.csproj", "{01D34CD3-D9A0-4706-B1B6-7469D7DC63D1}"
 EndProject
