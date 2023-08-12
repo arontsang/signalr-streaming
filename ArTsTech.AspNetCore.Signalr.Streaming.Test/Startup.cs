@@ -19,7 +19,7 @@ public class Startup
 			.UseWebSockets()
 			.UseSignalR(routes =>
 			{
-				routes.MapHub<CountHub>("/signalr/count");
+				routes.MapHub<CountHub>(CountHub.HubPath);
 			});
 	}
 }

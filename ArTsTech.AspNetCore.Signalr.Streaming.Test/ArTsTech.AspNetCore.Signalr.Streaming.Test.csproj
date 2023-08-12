@@ -4,6 +4,8 @@
         <TargetFramework>net462</TargetFramework>
         <LangVersion>11</LangVersion>
         <Nullable>enable</Nullable>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>   
+        <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,6 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ArTsTech.AspNetCore.Signalr.Streaming.Client\ArTsTech.AspNetCore.Signalr.Streaming.Client.csproj" />
       <ProjectReference Include="..\ArTsTech.AspNetCore.Signalr.Streaming.ServerFramework\ArTsTech.AspNetCore.Signalr.Streaming.ServerFramework.csproj" />
     </ItemGroup>
 

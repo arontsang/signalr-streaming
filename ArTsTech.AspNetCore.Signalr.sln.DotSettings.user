@@ -3,8 +3,14 @@
   &lt;Assembly Path="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.core\1.1.0\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.Core.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr\1.1.0\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.common\1.1.0\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.Common.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\aront\.nuget\packages\nunit\3.13.3\lib\net45\nunit.framework.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=50043dfb_002D1a2d_002D4b7e_002Da469_002Dc691112f2da5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DoStuff" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1372DB55-B257-44A4-99EE-0C096CD20578::.NETFramework,Version=v4.6.2::ArTsTech.AspNetCore.Signalr.Streaming.Test.Class1&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=588e9cc3_002Dd0af_002D48c4_002Db7f0_002D566f2bff0bb9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DoStuff #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1372DB55-B257-44A4-99EE-0C096CD20578::.NETFramework,Version=v4.6.2::ArTsTech.AspNetCore.Signalr.Streaming.Test.Class1.DoStuff&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
