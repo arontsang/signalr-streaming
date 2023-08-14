@@ -51,7 +51,7 @@ namespace ArTsTech.AspNetCore.Signalr.Streaming.Test
 		[Test]
 		public async Task Test_Cancellation_Flows_To_Server()
 		{
-			var client = new HubConnectionBuilder()
+			await using var client = new HubConnectionBuilder()
 				.WithUrl(HubUrl)
 				.Build();
 
@@ -75,7 +75,7 @@ namespace ArTsTech.AspNetCore.Signalr.Streaming.Test
 		[Test]
 		public async Task Test_Cancellation_End_Of_Stream_Work()
 		{
-			var client = new HubConnectionBuilder()
+			await using var client = new HubConnectionBuilder()
 				.WithUrl(HubUrl)
 				.Build();
 
@@ -88,7 +88,7 @@ namespace ArTsTech.AspNetCore.Signalr.Streaming.Test
 		[Test]
 		public async Task Test_Throw_works()
 		{
-			var client = new HubConnectionBuilder()
+			await using var client = new HubConnectionBuilder()
 				.WithUrl(HubUrl)
 				.Build();
 
@@ -104,7 +104,7 @@ namespace ArTsTech.AspNetCore.Signalr.Streaming.Test
 		[Test]
 		public async Task Auth_NotAuth_Works()
 		{
-			var client = new HubConnectionBuilder()
+			await using var client = new HubConnectionBuilder()
 				.WithUrl(HubUrl)
 				.Build();
 
@@ -119,7 +119,7 @@ namespace ArTsTech.AspNetCore.Signalr.Streaming.Test
 		[Test]
 		public async Task Auth_Success_Works()
 		{
-			var client = new HubConnectionBuilder()
+			await using var client = new HubConnectionBuilder()
 				.WithUrl(HubUrl)
 				.Build();
 
