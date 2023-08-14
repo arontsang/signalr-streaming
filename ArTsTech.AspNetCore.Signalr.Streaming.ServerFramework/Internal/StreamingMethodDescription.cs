@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.SignalR.Protocol;
 using Microsoft.Extensions.Logging;
@@ -59,6 +60,9 @@ public static class StreamingMethodDescription<THub>
 			OriginalParameterTypes = methodInfo.GetParameters().Select(x => x.ParameterType).ToList();
 			MethodInfo = methodInfo;
 			_invoker = BuildInvoker(methodInfo, isObservable);
+			
+			Policies = methodInfo.GetCustomAttributes<AuthorizeAttribute>(inherit: true)
+				.ToList();
 		}
 
 		public async Task InvokeStream(THub hub,
@@ -119,6 +123,7 @@ public static class StreamingMethodDescription<THub>
 
 		public IReadOnlyList<Type> OriginalParameterTypes { get; }
 		public MethodInfo MethodInfo { get; }
+		public IReadOnlyList<IAuthorizeData> Policies { get; }
 
 		private static string BuildErrorMessage(string message, Exception exception, bool includeExceptionDetails)
 		{
@@ -139,4 +144,5 @@ public interface IStreamingMethodDescription<in THub>
 
 	IReadOnlyList<Type> OriginalParameterTypes { get; }
 	MethodInfo MethodInfo { get; }
+	IReadOnlyList<IAuthorizeData> Policies { get; }
 }

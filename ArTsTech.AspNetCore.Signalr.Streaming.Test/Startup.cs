@@ -1,4 +1,8 @@
-﻿using ArTsTech.AspNetCore.Signalr.Streaming.Test.Signalr;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using ArTsTech.AspNetCore.Signalr.Streaming.Test.Signalr;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +15,13 @@ public class Startup
 	{
 		services
 			.AddStreamingSignalRCore();
+
+		services.AddAuthorization(options =>
+		{
+			options.AddPolicy("Never", policy => policy.AddRequirements(new StaticAuthRequirement(false)));
+			options.AddPolicy("Success", policy => policy.AddRequirements(new StaticAuthRequirement(true)));
+		})
+			.AddSingleton<IAuthorizationHandler, StaticAuthRequirementHandler>();
 	}
 
 	public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -21,5 +32,25 @@ public class Startup
 			{
 				routes.MapHub<CountHub>(CountHub.HubPath);
 			});
+	}
+
+	private record StaticAuthRequirement(bool Allow) : IAuthorizationRequirement
+	{
+		
+	}
+
+	private class StaticAuthRequirementHandler : AuthorizationHandler<StaticAuthRequirement>
+	{
+		protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, StaticAuthRequirement requirement)
+		{
+			if (requirement.Allow)
+			{
+				context.Succeed(requirement);
+				return Task.CompletedTask;
+			}
+			
+			context.Fail();
+			return Task.CompletedTask;
+		}
 	}
 }

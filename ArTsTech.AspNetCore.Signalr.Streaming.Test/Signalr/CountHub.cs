@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 
 namespace ArTsTech.AspNetCore.Signalr.Streaming.Test.Signalr;
@@ -35,6 +36,18 @@ public class CountHub : Hub<ICallback>
 			yield return i;
 			await Task.Delay(0);
 		}
+	}
+
+	[Authorize("Never")]
+	public IAsyncEnumerable<int> NotAuth()
+	{
+		return AsyncEnumerable.Empty<int>();
+	}
+	
+	[Authorize("Success")]
+	public IAsyncEnumerable<int> AuthAllowAll()
+	{
+		return AsyncEnumerable.Empty<int>();
 	}
 }
 

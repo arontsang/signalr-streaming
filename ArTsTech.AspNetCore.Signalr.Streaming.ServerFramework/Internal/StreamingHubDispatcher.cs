@@ -61,6 +61,14 @@ public partial class StreamingHubDispatcher<THub> : DefaultHubDispatcher<THub> w
 		_ = Task.Run(async () =>
 		{
 			using var scope = _serviceScopeFactory.CreateScope();
+			if (false == await IsHubMethodAuthorized(scope.ServiceProvider, connection.User, descriptor.Policies))
+			{
+				Log.HubMethodNotAuthorized(_logger, hubMethodInvocationMessage.Target);
+				await SendInvocationError(hubMethodInvocationMessage.InvocationId, connection,
+					$"Failed to invoke '{hubMethodInvocationMessage.Target}' because user is unauthorized");
+				return;
+			}
+			
 			var hubActivator = scope.ServiceProvider.GetRequiredService<IHubActivator<THub>>();
 			var hub = hubActivator.Create();
 			InitializeHub(hub, connection);
