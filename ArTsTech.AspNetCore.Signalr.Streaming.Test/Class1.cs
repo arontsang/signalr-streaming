@@ -1,10 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using ArTsTech.AspNetCore.Signalr.Streaming.Client;
 using ArTsTech.AspNetCore.Signalr.Streaming.Test.Signalr;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Server.Features;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.SignalR.Client;
 using NUnit.Framework;
 
@@ -72,6 +74,21 @@ namespace ArTsTech.AspNetCore.Signalr.Streaming.Test
 
 			var counts = await client.StreamAsync<int>(nameof(CountHub.CountAsync)).ToListAsync();
 			CollectionAssert.AreEqual(Enumerable.Range(0, 10), counts);
+		}
+		
+		[Test]
+		public async Task Test_Throw_works()
+		{
+			var client = new HubConnectionBuilder()
+				.WithUrl(HubUrl)
+				.Build();
+
+			await client.StartAsync();
+
+			Assert.ThrowsAsync<HubException>(async () =>
+			{
+				await client.StreamAsync<int>(nameof(CountHub.ThrowOnThird)).ToListAsync();
+			});
 		}
 	}
 }

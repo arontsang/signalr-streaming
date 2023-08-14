@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
@@ -22,6 +23,17 @@ public class CountHub : Hub<ICallback>
 		finally
 		{
 			await Clients.Caller.CountAsyncStopped();
+		}
+	}
+	
+	public async IAsyncEnumerable<int> ThrowOnThird()
+	{
+		foreach (var i in Enumerable.Range(0, 10))
+		{
+			if (i == 2)
+				throw new Exception("Foobar");
+			yield return i;
+			await Task.Delay(0);
 		}
 	}
 }
